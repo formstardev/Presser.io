@@ -7,16 +7,16 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from '../views/landing';
 import Splash from '../views/Auth/splash';
 import Register from '../views/Auth/register';
+import Veryfication from '../views/Auth/verification';
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={ Landing } exact />
-        <Route path="/splash" component={ Splash } exact />    
-        <Route path="/register" component={ Register } exact />    
-
-
+        <Route path="/" component={ Splash } exact />
+        <Route path="/landing" component = { Landing } exact />
+        <Route path="/register" component = { Register } exact />
+        <Route path="/verification" component = { Veryfication } exact/> 
       </Switch>
     </BrowserRouter>
   );
