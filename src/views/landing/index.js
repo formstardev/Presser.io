@@ -18,7 +18,10 @@ const Landing = () => {
   return (
     <div className="bg-[#3d5b81] min-h-screen justify-center flex">
       <div className="relative container mt-0 m-auto mb-[0px] flex flex-col items-center justify-center h-full">
-        <figure className="sm:mt-[40px]" >
+      <figure className="mt-[40px] sm:hidden block" >
+          <img className="" src="/images/light.png" alt=""></img>
+        </figure>
+        <figure className="sm:mt-[40px] sm:block hidden" >
           <img className="" src="/images/logo.png" alt=""></img>
         </figure>
         <figure className="mt-0 sm:max-w-full mt-[30px] flex flex-col items-center">
