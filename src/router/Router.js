@@ -10,6 +10,7 @@ import Register from '../views/Auth/register';
 import Veryfication from '../views/Auth/verification';
 import Login from '../views/Auth/login'
 import Confirmation from '../views/Auth/confirmation'
+import Onboarding from '../views/onboarding';
 
 
 const Routes = () => {
@@ -22,6 +23,7 @@ const Routes = () => {
         <Route path="/verification" component = { Veryfication } exact/>
         <Route path="/login" component = { Login } exact/>
         <Route path="/confirmation" component = { Confirmation } exact/>        
+        <Route path="/onboarding" component = { Onboarding } exact/>        
       </Switch>
     </BrowserRouter>
   );

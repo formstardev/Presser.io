@@ -16,7 +16,8 @@ const Splash =() => {
     },[history]);
     return (
         <>
-           {showSplash ? (<div className="bg-[#212529] sm:bg-[#3d5b81] min-h-screen justify-center items-center flex">
+           {showSplash ? (
+           <div className="bg-[#212529] sm:bg-[#3d5b81] min-h-screen justify-center items-center flex">
                 <div className="relative container mt-0 flex flex-col items-center justify-center h-full">
                     <Presserfinal className="mb-0 hidden sm:block"/>
                     <p className="italic text-center text-white text-[14.2px] hidden sm:block mt-0">Free Press Free Speech</p>
