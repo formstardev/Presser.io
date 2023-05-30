@@ -11,6 +11,7 @@ const Onboarding = () => {
         {src: '/images/connect.png',alt:'',title:'Connect', content:'Labore deserunt aliqua qui incididunt. Enim nisi pariatur irure labat consequat labore minim fugiat dese'},
         {src: '/images/speaker.png',alt:'',title:'Speak', content:'Labore deserunt aliqua qui incididunt. Enim nisi pariatur irure labat consequat labore minim fugiat dese'}
     ];
+    /** Next Slide display */
     function nextSlide() {
         setCurrentSlide(currentSlide+1);
         if (currentSlide+2 > slides.length){
@@ -18,6 +19,7 @@ const Onboarding = () => {
         }
         
     }
+    
     
     return (
         <div className='bg-[#FDFDFD] min-h-screen'>
@@ -29,11 +31,11 @@ const Onboarding = () => {
                 {/**Render all slides */}
 
                 {slides.map((slide, index) => (
-                    <div key={index} className={index === currentSlide ? 'w-[442px]' : 'hidden'} id='onboarding-skip'>
+                    <div key={index} className={index === currentSlide ? 'w-[200px] sm:w-[442px]' : 'hidden'} id='onboarding-skip'>
                         <figure>
                             <img className='' src={slide.src} alt={slide.alt}></img>
                         </figure>
-                        <p className='text-[#000] text-[48px] font-medium text-left'>
+                        <p className='mt-[50px] sm:mt-[32px] text-[#000] text-[48px] font-medium text-left'>
                             {slide.title}
                         </p>
                         <p className='text-[14px] '>{slide.content}</p>
@@ -42,7 +44,7 @@ const Onboarding = () => {
 
                 {/**Slide Status */}
                 
-                <div className='mt-1 w-[442px] flex justify-between'>
+                <div className='sm:mt-1 mt-[40px] w-[202px] flex justify-between'>
                     <div>
                         <div className='flex items-between justify-between w-[48px]'>
                             {slides.map((slide, index) => (

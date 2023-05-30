@@ -33,13 +33,18 @@ const Landing = () => {
           <p className="sm:ml-[30px] sm:mr-[30px]">A social network championing freedom of expression, freedom of individuals and the free flow of internet data.</p>
           <p className="text-[24px]">Everybody's welcome.</p>
         </div>
-        <div className="">
+        <form className="" action="/register-basic">
             <h1 className="text-center text-white font-bold sm:text-[42px] text-[28px] mb-[20px]">Coming Soon</h1>
             <div className="flex bg-white rounded rounded-3xl p-0.5 sm:w-[406px]">
-              <input type="text" className="ml-1.5 rounded-l-3xl bg-white text-grey-800 block focus:outline-none focus:ring-1 focus:ring-white flex-1 min-w-0 w-full text-sm p-1.5" placeholder="Enter your email" />
-              <button className="rounded rounded-2xl text-white bg-[#3f85e3] hover:bg-[#fae57f] focus:outline-none focus:ring-1 focus:ring-white font-medium rounded-full text-xs p-2 text-center">Notify me</button>
+              <input 
+                type="email" 
+                className="ml-1.5 rounded-l-3xl bg-white text-grey-800 block focus:outline-none focus:ring-1 focus:ring-white flex-1 min-w-0 w-full text-sm p-1.5" 
+                placeholder="Enter your email"
+                required
+               />
+              <button type="submit" className="rounded rounded-2xl text-white bg-[#3f85e3] hover:bg-[#fae57f] focus:outline-none focus:ring-1 focus:ring-white font-medium rounded-full text-xs p-2 text-center">Notify me</button>
             </div>
-        </div>
+        </form>
         <div className="my-[30px] text-[16px] text-white">
           <p className="mb-1 text-center">Share on social Media</p>
           <div className="flex flex-row gap-5 justify-center">
