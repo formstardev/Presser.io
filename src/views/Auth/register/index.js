@@ -15,7 +15,7 @@ const Register = () => {
                     </figure> 
                     <p className="text-[34px] mt-[30px] font-medium normal color-[#000] w-full">Create your Account</p>
                     <div className="mt-[44px] ml-[22px] w-[287px] flex items-center border-b border-[#000] border-light py-2 mr-[22px] ">
-                        <p className="text-[18px] w-fit-content color-[#000] font-normal text-left">Full Name</p>
+                        {/* <p className="text-[18px] w-fit-content color-[#000] font-normal text-left">Full Name</p> */}
                         <input 
                             className="appearance-none ml-[5px] mr-[10px] bg-transparent border-none text-gray-700 focus:outline-none" 
                             type="text" 
@@ -25,7 +25,7 @@ const Register = () => {
                         </input>
                     </div>
                     <div className="mt-[26px] ml-[22px] flex items-center border-b border-[#000] border-light py-2 mr-[22px] ">
-                        <p className="text-[18px] color-[#000] font-normal text-left">E-mail</p>
+                        {/* <p className="text-[18px] color-[#000] font-normal text-left">E-mail</p> */}
                         <input 
                             className="appearance-none ml-[5px] mr-[10px] bg-transparent border-none text-gray-700 focus:outline-none" 
                             type="email" 
@@ -36,7 +36,7 @@ const Register = () => {
                         </input>
                     </div>
                     <div className="mt-[26px] ml-[22px] flex items-center border-b border-[#000] border-light py-2 mr-[22px] ">
-                        <p className="text-[18px] color-[#000] font-normal text-left">Password</p>
+                        {/* <p className="text-[18px] color-[#000] font-normal text-left">Password</p> */}
                         <input 
                             className="appearance-none ml-[5px] mr-[10px] bg-transparent border-none text-gray-700 focus:outline-none" 
                             type="password" 
@@ -46,7 +46,7 @@ const Register = () => {
                         </input>
                     </div>
                     <div className="mt-[26px] ml-[22px] flex items-center border-b border-[#000] border-light py-2 mr-[22px] ">
-                        <p className="text-[18px] sm:w-[146px] color-[#000] font-normal text-left">Confirm Password</p>
+                        {/* <p className="text-[18px] sm:w-[146px] color-[#000] font-normal text-left">Confirm Password</p> */}
                         <input 
                             className="appearance-none ml-[5px] mr-[10px] bg-transparent border-none text-gray-700 focus:outline-none mr-[22px]" 
                             type="password" 
@@ -67,7 +67,7 @@ const Register = () => {
             </div>
         
             <div className="sm:hidden block relative flex-col flex mt-0 justify-center items-center">
-                <form className="" action="/verification">
+                <form className="flex flex-col justify-center items-center" action="/verification">
                     <figure className="mt-[40px]">
                         <img src="/images/blue.png" alt=""></img>
                     </figure>

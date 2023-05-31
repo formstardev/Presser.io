@@ -8,7 +8,7 @@ const Login = () => {
     return (
         <div className="sm:bg-[#edeff1] bg-[#f4f4f4] min-h-screen justify-center flex">
             <div className="sm:block hidden relative sm:flex sm:flex-col sm:mt-0 sm:justify-center sm:items-center">
-                <form className="" action="/onboarding">
+                <form className="flex flex-col justify-center items-center" action="/onboarding">
                     <div className="w-[330px] mt-[30px]">
                         <figure className="sm:block" >
                             <img className="" src="/images/presser_final-logo.png" alt="" loading="lazy"></img>
@@ -31,12 +31,12 @@ const Login = () => {
                 </form>
             </div>
             <div className="sm:hidden block relative flex-col flex mt-0 justify-center items-center">
-                <form className="" action="/onboarding">
+                <form className="flex flex-col justify-center items-center" action="/onboarding">
                     <figure className="mt-[40px]">
                         <img src="/images/blue.png" alt="" loading="lazy"></img>
                     </figure>
                     <figure className="mt-[40px]">
-                        <img className="float-left" src="/images/login-des.png" alt=""></img>
+                        <img className="float-left ml-40px" src="/images/login-des.png" alt=""></img>
                     </figure>
 
                     <div className="mt-[24px] ml-[22px] w-[287px] flex items-center border-b border-[#5B59D6] border-light py-2 mr-[22px] ">

@@ -21,7 +21,7 @@ const Veryfication =() => {
                     <img src="/images/Group1475.png" alt=""></img>
                 </figure>
                 <Link to="/confirmation">
-                <button class="bg-transparent w-[327px] mt-[108px] hover:bg-blue-500 text-blue-500 text-[16px] font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                <button className="bg-transparent w-[327px] mt-[108px] hover:bg-blue-500 text-blue-500 text-[16px] font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                     Go checking my email
                 </button>      
                 </Link>       
