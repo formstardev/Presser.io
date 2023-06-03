@@ -29,7 +29,7 @@ const ButtonGroup = () => {
             activeTab === tab.data_hs_tab
               ? 'hs-tab-active:bg-[#3F85E3] hs-tab-active:text-white'
               : ''
-          } py-3 px-4 sm:w-[83px] w-[53px] h-[33px] flex justify-center inline-flex items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-gray-500 rounded-lg hover:text-blue-600 dark:hover:text-gray-400 active`}
+          } py-3 px-4 sm:w-[83px] w-[53px] h-[33px] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-gray-500 rounded-lg hover:text-blue-600 dark:hover:text-gray-400 active`}
           id={tab.id}
           data-hs-tab={tab.data_hs_tab}
           aria-controls={tab.aria_controls}
@@ -42,7 +42,7 @@ const ButtonGroup = () => {
       </nav>
       <div className="mt-[50px] flex flex-col items-center sm:float-right">
         
-        <label htmlFor="Toggle3" className="inline-flex items-center p-2 rounded-md cursor-pointer dark:text-gray-800">
+        <label htmlFor="Toggle3" className="inline-flex items-center p-2 rounded-md sm:cursor-pointer dark:text-gray-800">
 	        <input id="Toggle3" type="checkbox" className="hidden peer" />
 	        <span className="px-4 py-2 text-white text-[12px] font-bold w-[117.06px] h-[26px] flex justify-center items-center rounded-l-md dark:bg-[#3F85E3] peer-checked:dark:bg-[#8D969D] peer-checked:dark:bg-opacity-20 ">Newest</span>
 	        <span className="px-4 py-2 text-white text-[12px] font-bold w-[117.06px] h-[26px] flex justify-center items-center rounded-r-md dark:bg-[#8D969D] dark:bg-opacity-20 peer-checked:dark:bg-[#3F85E3]">Best</span>
