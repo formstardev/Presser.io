@@ -23,11 +23,11 @@ const Landing = () => {
         <figure className="mt-[40px] sm:hidden block" >
           <img className="" src="/images/light.png" alt=""></img>
         </figure> 
-        <figure className="sm:mt-[40px] sm:block hidden" >
-          <img className="" src="/images/logo.png" alt=""></img>
+        <figure className="sm:mt-[30px] sm:block hidden" >
+          <img className="w-[180px] h-[98px]" src="/images/brandmark.png" alt=""></img>
         </figure>
         <figure className="mt-0 sm:max-w-full mt-[30px] flex flex-col items-center">
-          <img className="sm:w-3/6 w-3/6" src="/images/friends.png" alt=""></img>
+          <img className="sm:w-2/7 w-3/6" src="/images/friends.png" alt=""></img>
         </figure>
         <div className="text-center text-white sm:text-[20px] text-[12px]">
           <p className="sm:ml-[30px] sm:mr-[30px]">A social network championing freedom of expression, freedom of individuals and the free flow of internet data.</p>
@@ -42,7 +42,7 @@ const Landing = () => {
                 placeholder="Enter your email"
                 required
                />
-              <button type="submit" className="rounded rounded-2xl text-white bg-[#3f85e3] hover:bg-[#fae57f] focus:outline-none focus:ring-1 focus:ring-white font-medium rounded-full text-xs p-2 text-center">Notify me</button>
+              <button type="submit" className="rounded rounded-2xl text-white bg-[#3f85e3] hover:bg-[#fae57f] sm:cursor-pointer cursor-none focus:outline-none focus:ring-1 focus:ring-white font-medium rounded-full text-xs p-2 text-center">Notify me</button>
             </div>
         </form>
         <div className="my-[30px] text-[16px] text-white">
@@ -55,16 +55,16 @@ const Landing = () => {
             <FaInstagramSquare size={20}/>
           </div>
         </div>
-        <div className="">
-          <button className="flex m-auto text-[#3d5b81] bg-[#fae57f] sm:mt-[33.4px] mt-[50.7px] hover:bg-[#fae57e] focus:outline-none focus:ring-1 focus:ring-white font-medium rounded-full text-sm px-[16px] py-[3px] text-center">Donate</button>
+        <div className="mt-[50px] sm:mt-[31.9px]">
+          <button className="flex m-auto text-[#3d5b81] bg-[#fae57f] hover:bg-[#fae57e] focus:outline-none focus:ring-1 focus:ring-white font-medium rounded-full text-sm px-[16px] py-[3px] text-center">Donate</button>
           <div className="mt-3 flex flex-row gap-4 justify-center sm:mb-[40px] mb-[5px]">
-            <FaCcAmazonPay size={25} color="#fae57f"/>
-            <FaCcApplePay size={25} color="#fae57f"/>
-            <FaCcMastercard size={25} color="#fae57f"/>
-            <FaCcStripe size={25} color="#fae57f"/>
-            <FaCcVisa size={25} color="#fae57f"/>
-            <FaCcPaypal size={25} color="#fae57f"/>
-            <FaCreditCard size={25} color="#fae57f"/>
+            <FaCcAmazonPay size={25} className="sm:w-[34.7px]" color="#fae57f"/>
+            <FaCcApplePay size={25} className="sm:w-[34.7px]" color="#fae57f"/>
+            <FaCcMastercard size={25} className="sm:w-[34.7px]" color="#fae57f"/>
+            <FaCcStripe size={25} className="sm:w-[34.7px]" color="#fae57f"/>
+            <FaCcVisa size={25} className="sm:w-[34.7px]" color="#fae57f"/>
+            <FaCcPaypal size={25} className="sm:w-[34.7px]" color="#fae57f"/>
+            <FaCreditCard size={25} className="sm:w-[34.7px]" color="#fae57f"/>
           </div>
         </div>
       </div>

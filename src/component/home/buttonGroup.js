@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { IoIosArrowForward } from "react-icons/io"
+
+/**import components */
 import ProfileContent from './profilContent';
+import NewList from './newsList';
+import TrendingList from './trendingList';
 
 
 const ButtonGroup = () => {
@@ -20,7 +24,7 @@ const ButtonGroup = () => {
 
   return (
     <>
-      <nav className="flex space-x-2 rounded-lg bg-[#373C40] px-2 py-2 border-[#8D969D] border-bold sm:w-[581px] border-1" aria-label="Tabs" role="tablist">
+      <nav className="flex space-x-2 rounded-lg bg-[#373C40] px-2 py-2 border border-opacity-40 border-[#8D969D] border-bold sm:w-[581px] border-1" aria-label="Tabs" role="tablist">
         {tabslist.map((tab,index)=>
         <button 
             key={index}
@@ -40,12 +44,11 @@ const ButtonGroup = () => {
         </button>
         )}       
       </nav>
-      <div className="mt-[50px] flex flex-col items-center sm:float-right">
-        
+      <div className="mt-[50px] flex flex-col items-center sm:float-right">        
         <label htmlFor="Toggle3" className="inline-flex items-center p-2 rounded-md sm:cursor-pointer dark:text-gray-800">
 	        <input id="Toggle3" type="checkbox" className="hidden peer" />
-	        <span className="px-4 py-2 text-white text-[12px] font-bold w-[117.06px] h-[26px] flex justify-center items-center rounded-l-md dark:bg-[#3F85E3] peer-checked:dark:bg-[#8D969D] peer-checked:dark:bg-opacity-20 ">Newest</span>
-	        <span className="px-4 py-2 text-white text-[12px] font-bold w-[117.06px] h-[26px] flex justify-center items-center rounded-r-md dark:bg-[#8D969D] dark:bg-opacity-20 peer-checked:dark:bg-[#3F85E3]">Best</span>
+	        <span className="px-4 py-2 text-white text-[12px] font-bold w-[117.06px] h-[26px] flex justify-center items-center rounded-l-md bg-[#3F85E3] peer-checked:bg-[#8D969D] peer-checked:bg-opacity-20 ">Newest</span>
+	        <span className="px-4 py-2 text-white text-[12px] font-bold w-[117.06px] h-[26px] flex justify-center items-center rounded-r-md bg-[#8D969D] bg-opacity-20 peer-checked:bg-[#3F85E3]">Best</span>
         </label>
       </div>
       <div className="mt-3">
@@ -55,7 +58,7 @@ const ButtonGroup = () => {
           aria-labelledby="pills-with-brand-color-item-1"
           className={`${activeTab === '#pills-with-brand-color-1' ? '' : 'hidden'}`}
         >  
-        <div className="flex justify-left">
+        <div className="flex justify-left ">
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
             <IoIosArrowForward color="white" className="mt-1.5" />
             <span className="text-white text-[16px] font-normal">Breaking</span>
@@ -79,7 +82,9 @@ const ButtonGroup = () => {
           <p className="text-[#fff] text-[34px] font-medium">
             Speaking
           </p>
-          <ProfileContent className="mt-5"/>
+          <div className='mt-3 border-t flex flex-col justify-center border-white border-opacity-10'>
+            <ProfileContent className="mt-2"/>
+          </div>
         </div>
         <div
           id="news_id"
@@ -91,10 +96,13 @@ const ButtonGroup = () => {
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
             <IoIosArrowForward color="white" className="mt-1.5" />
             <span className="text-white text-[16px] font-normal">News</span>
-        </div>
+        </div> 
           <p className="text-[#fff] text-[34px] font-medium">
-            News
+            Top News Stories
           </p>
+          <div className='mt-3 border-t border-white border-opacity-10'>          
+            <NewList/>
+          </div>
         </div>
         <div
           id="trending_id"
@@ -110,6 +118,9 @@ const ButtonGroup = () => {
           <p className="text-[#fff] text-[34px] font-medium">
             Trending
           </p>
+          <div className='mt-3 border-t border-white border-opacity-10'>          
+            <TrendingList/>
+          </div>
         </div>
         <div
           id="live_id"

@@ -45,7 +45,7 @@ const Header = () => {
                           <div className="">
                             <Menu.Button className=" max-w-xs bg-[#373C40] flex rounded-full items-center text-sm lg:p-2 lg:rounded-full lg:hover:bg-opacity-70">
                                 <img
-                                className="h-10 w-10 rounded-full"
+                                className="h-10 w-10 rounded-full border border-[2px] border-[#3f85e3] "
                                 src="/images/human/men-photo.png"
                                 alt=""
                                 />

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../component/home/header";
 import Sidebar from "../../component/home/sidebar";
-
+import RightBar from "../../component/home/rightBar";
 
 
 
@@ -17,6 +17,9 @@ const Home = () => {
                 <Sidebar/>
                 <div className="mt-[20px] sm:ml-[150px]">                           
                     <ButtonGroup/>
+                </div>
+                <div className="ml-[80px] mt-[35px]">
+                    <RightBar />
                 </div>
             </div>
         </>
