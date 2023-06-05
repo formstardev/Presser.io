@@ -2,14 +2,14 @@ import React from "react";
 import Layout from "../Layout";
 
 
-
 import HomeComponent from "../../component/home/homeComponent";
 
-const Home = () => {
+const Message = () => {
+    
     return (
         <Layout>
-            <HomeComponent />
+            <HomeComponent/>
         </Layout>
     )
 }
-export default Home;
+export default Message;

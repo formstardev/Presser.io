@@ -7,7 +7,7 @@ import NewList from './newsList';
 import TrendingList from './trendingList';
 
 
-const ButtonGroup = () => {
+const HomeComponent = () => {
   const [activeTab, setActiveTab] = useState('#pills-with-brand-color-1');
 
   const handleTabClick = (tabId) => {
@@ -156,4 +156,4 @@ const ButtonGroup = () => {
     </>
   );
 }
-export default ButtonGroup;
+export default HomeComponent;

@@ -13,6 +13,7 @@ import Confirmation from '../views/Auth/confirmation'
 import Onboarding from '../views/onboarding';
 import RegisterBasic from '../views/Auth/register-basic';
 import Home from '../views/Home';
+import Message from '../views/Message';
 
 
 
@@ -29,6 +30,7 @@ const Routes = () => {
         <Route path="/onboarding" component = { Onboarding } exact/>
         <Route path="/register-basic" component = { RegisterBasic } exact/>                
         <Route path="/home" component = { Home } exact/>                
+        <Route path="/message" component = { Message } exact/>                
       </Switch>
     </BrowserRouter>
   );

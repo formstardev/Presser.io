@@ -5,7 +5,6 @@ import { RiShareBoxLine } from 'react-icons/ri';
 import { AiTwotoneHeart } from 'react-icons/ai';
 
 const NewComponent = (props) => {
-    console.log('props',props)
     return (
         <div className="sm:w-full h-[190px] bg-[#373c40]  rounded-md border border-white border-opacity-10 ">
             <div className="mx-4 my-4 flex justify-between">

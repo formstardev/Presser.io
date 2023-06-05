@@ -24,8 +24,8 @@ import { FiBell, FiMail, FiSettings } from 'react-icons/fi'
 import { FaUser, FaUsers } from 'react-icons/fa'
 
 const navigation = [
-  { name: 'Home', href: '#', icon: HomeIcon, current: true },
-  { name: 'Message', href: '#', icon: FiMail, current: false },
+  { name: 'Home', href: '/home', icon: HomeIcon, current: true },
+  { name: 'Message', href: '/message', icon: FiMail, current: false },
   { name: 'Groups', href: '#', icon:FaUsers, current: false },
   { name: 'Notifications', href: '#', icon: FiBell, current: false },
   { name: 'Profile', href: '#', icon: FaUser, current: false },
