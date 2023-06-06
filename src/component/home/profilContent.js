@@ -17,21 +17,21 @@ import { Menu, Transition } from '@headlessui/react';
     return (
         <>
         {profileData.map((data, index) =>        
-            <div key={index} className='w-full sm:w-full mt-5 h-[402px] rounded-md bg-[#373C40] border border-white border-opacity-30'>
+            <div key={index} className='w-11/12 mx-4 sm:w-full mt-5 min-h-fit py-2 rounded-md bg-[#373C40] border border-white border-opacity-30'>
                 <div className='' >
                     <div className='flex justify-between'>
                         <div>
-                            <div className='flex justify-between w-full mr-[0px]'>
+                            <div className='flex justify-between w-full'>
                                 <div className=''>
                                     <figure>
                                         <img src={data.src} alt='' className='mx-2 my-2'></img>
                                     </figure>
                                 </div>
                                 <div>
-                                    <p className='text-[#3F85E3] text-[14px] my-2'>{data.nickname}
+                                    <p className='text-[#3F85E3] sm:text-[14px] text-[12px] my-2'>{data.nickname}
                                         
                                     </p>
-                                    <p className='text-[12px] text-[#C6C6C6] '>{data.uploadtime}</p>
+                                    <p className='sm:text-[12px] text-[10px] text-[#C6C6C6] '>{data.uploadtime}</p>
                                 </div>
                                 <div className='mt-2 mr-1 ml-2'>
                                     <img src="/images/light.png" alt='' className=' h-[26.8px]'></img>
@@ -44,7 +44,7 @@ import { Menu, Transition } from '@headlessui/react';
                         {({ open }) => (
                         <>
                           <div className="">
-                            <Menu.Button className=" max-w-xs bg-[#373C40] flex rounded-full items-center text-sm lg:p-2 lg:rounded-full lg:hover:bg-opacity-70">
+                            <Menu.Button className=" max-w-xs bg-[#373C40] flex items-center text-sm lg:rounded-full mx-2 lg:hover:bg-opacity-70">
                                 <img
                                 className="h-1 w-4"
                                 src="/images/dots.png"
@@ -64,7 +64,7 @@ import { Menu, Transition } from '@headlessui/react';
                             >
                             <Menu.Items
                                 static
-                                className=" absolute mt-2 w-[76px] rounded-md text-white bg-[#8d969d] shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                className=" absolute mt-2 w-[76px] rounded-md text-white bg-[#8d969d] shadow-lg py-1 ring-1 ring-black ring-opacity-5 focus:outline-none"
                             >
                                 <Menu.Item>
                                 {({ active }) => (
@@ -113,31 +113,31 @@ import { Menu, Transition } from '@headlessui/react';
                 </div>
                     </div>
                     <div className='sm:w-[517.8px]'>
-                        <p className='mx-5 my-2 text-[14px] font-normal text-white'>
+                        <p className='mx-5 my-2 sm:text-[14px] text-[9px] font-normal text-white'>
                             {data.content} 
                         </p>
                     </div>
                     <div className='flex flex-col justify-center items-center'>
-                        <figure>
-                            <img className='' src={data.background_src} alt=''></img>
+                        <figure className='w-11/12'>
+                            <img className='w-full' src={data.background_src} alt=''></img>
                         </figure>
                     </div>
-                    <div className='mt-5 flex justify-between mx-3 gap-2'>
+                    <div className='sm:mt-5 mt-2 flex justify-between mx-3 gap-2'>
                         <div className='ml-2 flex justify-between hover:cursor-pointer'>
-                            <AiTwotoneHeart className='w-6 h-6 text-[#3F85E3]'/>
-                            <p className='text-[14px] text-white'>10 Likes</p>
+                            <AiTwotoneHeart className='sm:w-6 sm:h-6 w-4 h-4 text-[#3F85E3]'/>
+                            <p className='sm:text-[14px] text-[12px] text-white'>10 Likes</p>
                         </div>
                         <div className='flex justify-between hover:cursor-pointer'>
-                            <FiMessageSquare className='w-6 h-6 text-white'/>
-                            <p className='text-[14px] text-white'>5 comments</p>
+                            <FiMessageSquare className='sm:w-6 sm:h-6 w-4 h-4 text-white'/>
+                            <p className='sm:text-[14px] text-[12px] text-white'>5 comments</p>
                         </div>                
                         <div className='flex justify-between hover:cursor-pointer'>
-                            <IoMdRepeat className='w-6 h-6 text-white'/>
-                            <p className='text-[14px] text-white'>Re-post</p>
+                            <IoMdRepeat className='sm:w-6 sm:h-6 w-4 h-4 text-white'/>
+                            <p className='sm:text-[14px] text-[12px] text-white'>Re-post</p>
                         </div>                
                         <div className='flex justify-between mr-2 hover:cursor-pointer'>
-                            <RiShareBoxLine className='w-6 h-6 text-white'/>
-                            <p className='text-[14px] text-white'>Share</p>
+                            <RiShareBoxLine className='sm:w-6 sm:h-6 w-4 h-4 text-white'/>
+                            <p className='sm:text-[14px] text-[12px] text-white'>Share</p>
                         </div>                
                     </div>
                 </div>

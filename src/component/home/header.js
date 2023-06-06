@@ -30,7 +30,7 @@ const Header = () => {
                             <input
                                 id="search_field"
                                 name="search_field"
-                                className="block bg-[#8D969D] bg-opacity-20 rounded-lg sm:w-[450px] h-full pl-8 pr-3 py-2 border-transparent text-[#8D969D] placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent sm:text-sm"
+                                className="block bg-[#8D969D] bg-opacity-20 sm:rounded-lg rounded-full sm:w-[450px] h-full pl-8 pr-3 py-2 border-transparent text-[#8D969D] placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent sm:text-sm"
                                 placeholder="Search Presser"
                                 type="search"
                             />

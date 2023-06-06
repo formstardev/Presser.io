@@ -2,13 +2,15 @@ import React from "react";
 import Layout from "../Layout";
 
 
-import HomeComponent from "../../component/home/homeComponent";
+/** import components */
+
+import MessageList from "../../component/message/messageList";
 
 const Message = () => {
     
     return (
         <Layout>
-            <HomeComponent/>
+            <MessageList/>
         </Layout>
     )
 }

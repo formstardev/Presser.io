@@ -24,7 +24,7 @@ const HomeComponent = () => {
 
   return (
     <>
-      <nav className="flex space-x-2 rounded-lg bg-[#373C40] px-2 py-2 border border-opacity-40 border-[#8D969D] border-bold sm:w-[581px] border-1" aria-label="Tabs" role="tablist">
+      <nav className="mx-3 flex space-x-2 rounded-lg bg-[#373C40] sm:px-2 px-0 sm:py-2 py-0 border border-opacity-40 border-[#8D969D] border-bold sm:w-full w-11/12 border-1" aria-label="Tabs" role="tablist">
         {tabslist.map((tab,index)=>
         <button 
             key={index}
@@ -33,7 +33,7 @@ const HomeComponent = () => {
             activeTab === tab.data_hs_tab
               ? 'hs-tab-active:bg-[#3F85E3] hs-tab-active:text-white'
               : ''
-          } py-3 px-4 sm:w-[83px] w-[53px] h-[33px] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-gray-500 rounded-lg hover:text-blue-600 dark:hover:text-gray-400 active`}
+          } py-3 sm:w-[83px] w-1/6 h-[33px] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-gray-500 rounded-lg hover:text-blue-600 dark:hover:text-gray-400 active`}
           id={tab.id}
           data-hs-tab={tab.data_hs_tab}
           aria-controls={tab.aria_controls}
@@ -44,7 +44,7 @@ const HomeComponent = () => {
         </button>
         )}       
       </nav>
-      <div className="mt-[50px] flex flex-col items-center sm:float-right">        
+      <div className="mt-[50px] flex flex-col sm:float-right items-center w-full">        
         <label htmlFor="Toggle3" className="inline-flex items-center p-2 rounded-md sm:cursor-pointer dark:text-gray-800">
 	        <input id="Toggle3" type="checkbox" className="hidden peer" />
 	        <span className="px-4 py-2 text-white text-[12px] font-bold w-[117.06px] h-[26px] flex justify-center items-center rounded-l-md bg-[#3F85E3] peer-checked:bg-[#8D969D] peer-checked:bg-opacity-20 ">Newest</span>
@@ -58,25 +58,28 @@ const HomeComponent = () => {
           aria-labelledby="pills-with-brand-color-item-1"
           className={`${activeTab === '#pills-with-brand-color-1' ? '' : 'hidden'}`}
         >  
-        <div className="flex justify-left ">
+        <div className="flex fade-in duration-500 ease-in-out ">
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
-            <IoIosArrowForward color="white" className="mt-1.5" />
+            <IoIosArrowForward color="white" className="mt-1.5 min-w-fit" />
             <span className="text-white text-[16px] font-normal">Breaking</span>
         </div>
           <p className="text-[#fff] text-[34px] font-medium">
-            Breaking
+            Breaking News
           </p>
+          <div className='mt-3 border-t border-white border-opacity-10 '>          
+            <NewList/>
+          </div>
         </div>
 
         <div
           id="speaks_id"
           role="tabpanel"
           aria-labelledby="pills-with-brand-color-item-2"
-          className={`${activeTab === '#pills-with-brand-color-2' ? '' : 'hidden'}`}
+          className={`${activeTab === '#pills-with-brand-color-2' ? ' fade-in duration-100 ease-in-out' : 'hidden'} `}
         >
         <div className="flex justify-left">
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
-            <IoIosArrowForward color="white" className="mt-1.5" />
+            <IoIosArrowForward color="white" className="mt-1.5 min-w-fit" />
             <span className="text-white text-[16px] font-normal">Speaking</span>
         </div>
           <p className="text-[#fff] text-[34px] font-medium">
@@ -90,11 +93,11 @@ const HomeComponent = () => {
           id="news_id"
           role="tabpanel"
           aria-labelledby="pills-with-brand-color-item-3"
-          className={`${activeTab === '#pills-with-brand-color-3' ? '' : 'hidden'}`}
+          className={`${activeTab === '#pills-with-brand-color-3' ? ' fade-in duration-100 ease-in-out' : 'hidden'}`}
         >
         <div className="flex justify-left">
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
-            <IoIosArrowForward color="white" className="mt-1.5" />
+            <IoIosArrowForward color="white" className="mt-1.5 min-w-fit" />
             <span className="text-white text-[16px] font-normal">News</span>
         </div> 
           <p className="text-[#fff] text-[34px] font-medium">
@@ -108,11 +111,11 @@ const HomeComponent = () => {
           id="trending_id"
           role="tabpanel"
           aria-labelledby="pills-with-brand-color-item-4"
-          className={`${activeTab === '#pills-with-brand-color-4' ? '' : 'hidden'}`}
+          className={`${activeTab === '#pills-with-brand-color-4' ? ' fade-in duration-100 ease-in-out' : 'hidden'}`}
         >
         <div className="flex justify-left">
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
-            <IoIosArrowForward color="white" className="mt-1.5" />
+            <IoIosArrowForward color="white" className="mt-1.5 min-w-fit" />
             <span className="text-white text-[16px] font-normal">Trending</span>
         </div>
           <p className="text-[#fff] text-[34px] font-medium">
@@ -130,7 +133,7 @@ const HomeComponent = () => {
         >
         <div className="flex justify-left">
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
-            <IoIosArrowForward color="white" className="mt-1.5" />
+            <IoIosArrowForward color="white" className="mt-1.5 min-w-fit" />
             <span className="text-white text-[16px] font-normal">Live</span>
         </div>
           <p className="text-[#fff] text-[34px] font-medium">
@@ -145,7 +148,7 @@ const HomeComponent = () => {
         >
         <div className="flex justify-left">
             <p className="text-[#3f85e3] text-[16px] font-normal ">Home</p>
-            <IoIosArrowForward color="white" className="mt-1.5" />
+            <IoIosArrowForward color="white" className="mt-1.5 min-w-fit" />
             <span className="text-white text-[16px] font-normal">Channel</span>
         </div>
           <p className="text-[#fff] text-[34px] font-medium">
