@@ -1,16 +1,19 @@
 import React from "react";
 import { GrStar } from "react-icons/gr";
-import { AiOutlineClose, AiOutlineSetting } from "react-icons/ai";
-import { IoIosArrowDown } from "react-icons/io";
+import { AiOutlineClose } from "react-icons/ai";
+import HashtagGroup from "./hashtagsgroup";
 const RightBar = () => {
-    const searchResultData = [
-        {date:'23 January, 2021',searchTitle :`Fransa'da 15,5`},
-        {date:'23 January, 2021',searchTitle :`14 Haziran'da`},
-        {date:'23 January, 2021',searchTitle :`#diyanetkapatılsın`},
-        {date:'23 January, 2021',searchTitle :`#KabineSınavıErteler`},
-        {date:'23 January, 2021',searchTitle :`Travis Scott`},
-        {date:'23 January, 2021',searchTitle :`Fransa'da 15,5`}
-    ]
+    const hashtagslist = [
+        {name:'#Photography', category:'new'},
+        {name:'#Natural', category:'new'},
+        {name:'#Wildlife', category:'new'},
+        {name:'#Toronto', category:'new'},
+        {name:'#Canada', category:'new'},
+        {name:'#Wildeneses', category:'best'},
+        {name:'#Photography', category:'best'},
+        {name:'#Photography', category:'best'},
+        {name:'#Photography', category:'best'},
+    ];
     return (
         <>
             <div>
@@ -45,38 +48,24 @@ const RightBar = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-[35px] sm:w-auto rounded-lg md:md-[328px] border border-white border-opacity-10 bg-[#373c40] h-fit">
+            <div className="mt-[35px] sm:w-[328px] rounded-lg md:md-[328px] border border-white border-opacity-10 bg-[#373c40] min-h-fit py-2">
                 <div className="border-b border-white border-opacity-20">
                     <div className="flex px-2 py-3 justify-between items-center mx-2 ">
                         <p className="text-[#f8f9fa] text-[19px] font-bold">
-                            Previous Searches
+                            Popular Hashtags
                         </p>
-                        <AiOutlineSetting size={20} className="fill-[#3f85e3] hover:cursor-pointer"/>
                     </div>
                 </div>
-                {searchResultData.map((sdata,index) =>
-                <div key={index} className="py-2 flex justify-between border-b border-white border-opacity-20 items-center">
-                    <div className="mx-4">
-                        <p className="text-[13px] text-[#c6c6c6]">{sdata.date}</p>
-                        <p className="text-[#f8f9fa] text-[15px] font-bold">{sdata.searchTitle}</p>
-                    </div>
-                    <IoIosArrowDown color="#c6c6c6" className="mx-4 hover:sm:cursor-pointer"/>
-                </div>
-                )}
-                <div className="px-4 py-4">
-                    <p className="text-[#3f85e3] text-[15px] hover:cursor-pointer">
-                        Show more
-                    </p>
-                </div>
+                <div>
+                    <HashtagGroup bdata={hashtagslist}/>
+                </div>                
             </div>
-            <div className="mt-[35px] sm:w-auto rounded-lg md:md-[328px] border border-white border-opacity-10 bg-[#373c40] h-fit">
+            <div className="mt-[35px] sm:w-[328px] rounded-lg md:md-[328px] border border-white border-opacity-10 bg-[#373c40] min-h-fit py-2">
                 <div className="border-b border-white border-opacity-20 px-4 py-3 ">
-                    <p className="text-[#3f85e3] text-[19px] font-bold">Popular Hashtags</p>
+                    <p className="text-[#3f85e3] text-[19px] font-bold">Trending Hashtags</p>
                 </div>
-                <div className="h-[300px]">
-                    <div>
-
-                    </div>
+                <div className="">
+                    <HashtagGroup bdata={hashtagslist}/>
                 </div>
             </div>
         </>

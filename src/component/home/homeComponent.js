@@ -23,7 +23,7 @@ const HomeComponent = () => {
   ]
 
   return (
-    <>
+    <div className="sm:mb-8 mb-[80px]">
       <nav className="mx-3 flex space-x-2 rounded-lg bg-[#373C40] sm:px-2 px-0 sm:py-2 py-0 border border-opacity-40 border-[#8D969D] border-bold sm:w-full w-11/12 border-1" aria-label="Tabs" role="tablist">
         {tabslist.map((tab,index)=>
         <button 
@@ -156,7 +156,7 @@ const HomeComponent = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default HomeComponent;

@@ -14,6 +14,7 @@ import Onboarding from '../views/onboarding';
 import RegisterBasic from '../views/Auth/register-basic';
 import Home from '../views/Home';
 import Message from '../views/Message';
+import Group from '../views/Group';
 
 
 
@@ -31,6 +32,7 @@ const Routes = () => {
         <Route path="/register-basic" component = { RegisterBasic } exact/>                
         <Route path="/home" component = { Home } exact/>                
         <Route path="/message" component = { Message } exact/>                
+        <Route path="/group" component = { Group } exact/>                
       </Switch>
     </BrowserRouter>
   );
