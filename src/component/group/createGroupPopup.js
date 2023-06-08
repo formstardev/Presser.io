@@ -39,7 +39,7 @@ const CreateGroupModal = (props) => {
         return newGroup;
     }
   return (
-    <div className={`fixed z-10 inset-0 overflow-y-auto ${isOpen ? "block" : "hidden"}`}>
+    <div className={`fixed z-10 inset-0 overflow-y-auto ${isOpen ? "block" : "hidden"} w-full`}>
       <div className="flex items-center justify-center min-h-screen">
         <div className="bg-[#373c40] border border-white border-opacity-10 rounded-lg overflow-hidden shadow-xl max-w-md sm:w-full w-full">
           <div className="flex flex-col">
