@@ -9,7 +9,7 @@ const MessageList = () => {
         {photo_src:"/images/human/man-4.png", name : "Matt Smith", status:"Received", time:"7:11 pm", mcontent:"Hey Ryan ! Happy Birthday !"},
     ];
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col w-full items-center justify-center">
             <div className="rounded-lg  sm:w-[550px] mx-4">
                 <form className="sm:w-full flex md:ml-0" action="/" method="GET">
                     <label htmlFor="search_field" className="sr-only">

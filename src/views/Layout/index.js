@@ -14,8 +14,10 @@ const Layout = ({children}) => {
                 />
             </div>
             <div className="mt-[0px] flex bg-[#212529]">
-                <Sidebar/>
-                <div className="mt-[20px] sm:ml-[150px]">                           
+                <div className="">
+                    <Sidebar/>
+                </div>
+                <div className="w-full sm:w-auto mt-[20px] mx-2 sm:ml-[150px] ">                           
                     {children}
                 </div>
                 <div className="ml-[80px] mt-[35px] sm:block hidden">

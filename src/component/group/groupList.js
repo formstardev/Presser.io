@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -6,6 +7,9 @@ import Box from '@mui/material/Box';
 import GroupComponent from './groupComponent';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useMediaQuery } from '@mui/material';
+
+/** import Modal */
+import CreateGroupModal from './createGroupPopup';
  
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,6 +52,9 @@ export default function GroupList () {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  /** Open create group modal */
+  const [isOpen, setIsOpen] = useState(false);
+  
 
   const grouplist = [
     {group_logo:'/images/group/group_logo_1.png', group_name:'Reiki Healings', update:'1month', category:'pin'},
@@ -94,11 +101,14 @@ export default function GroupList () {
           <div>
           <button 
             className="bg-[#3f85e3] flex justify-between items-center hover:bg-teal-700 border-[#3f85e3] hover:border-teal-700 min-w-fit min-h-fit sm:py-2 sm:px-5 py-1 px-3 sm:text-[16px] text-[12px] font-medium border-4 text-white  rounded rounded-xl" 
-            type="button">
+            type="button"
+            onClick={() => setIsOpen(true)}
+            >
               <AiOutlinePlusCircle className='mr-3'/>NewGroup
           </button>
           </div>
         </div>
+        
       {
         grouplist.filter(items => items.category && items.category.includes('other'))
           .map((gdata, index) => (
@@ -107,7 +117,11 @@ export default function GroupList () {
             </div>
           ))
       }     
-      </TabPanel>
+      </TabPanel> 
+      <CreateGroupModal 
+        isOpen = {isOpen}
+        setIsOpen = {setIsOpen}
+      />     
     </Box>
   );
 }
