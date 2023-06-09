@@ -15,6 +15,7 @@ import RegisterBasic from '../views/Auth/register-basic';
 import Home from '../views/Home';
 import Message from '../views/Message';
 import Group from '../views/Group';
+import GroupChat from '../views/Group/groupChat';
 
 
 
@@ -33,6 +34,7 @@ const Routes = () => {
         <Route path="/home" component = { Home } exact/>                
         <Route path="/message" component = { Message } exact/>                
         <Route path="/group" component = { Group } exact/>                
+        <Route path="/group/groupchat" component = { GroupChat } exact/>                
       </Switch>
     </BrowserRouter>
   );
