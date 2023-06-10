@@ -1,11 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Usericon from "../../../assets/img/Icon/user.png";
 import Emailicon from "../../../assets/img/Icon/email.png";
 import Passwordicon from "../../../assets/img/Icon/password.png";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 const Register = () => {
+    const [fullname, setFullName] = useState("");
+    const [email, setEmail ] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [errors, setErrors] = useState({});
+    const history = useHistory();
+    const validate = () =>{
+
+        if (!fullname.trim()) {
+            errors.fullName = "Full name is required";
+        }
+
+        if (!email.trim()) {
+            errors.email = "Email is required";
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.email = "Email is invalid";
+        }
+
+        if (!password) {
+            errors.password = "Password is required";
+        } else if (password.length < 6) {
+            errors.password = "Password should be at least 6 characters long";
+        }
+
+        if (!confirmPassword) {
+            errors.confirmPassword = "Confirm password is required";
+        } else if (password !== confirmPassword) {
+            errors.confirmPassword = "Passwords do not match";
+        }
+
+        setErrors(errors);
+
+        return Object.keys(errors).length === 0;
+    };
+
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+
+    //     if (validate()) {
+    //         // Submit the form
+    //         history.push("/home")
+    //     }
+    // } 
     return (
         <div className="sm:bg-[#edeff1] bg-[#f4f4f4] min-h-screen justify-center flex">
             <div className="sm:block hidden relative sm:flex sm:flex-col sm:mt-0 sm:justify-center sm:items-center">
@@ -21,6 +65,7 @@ const Register = () => {
                             type="text" 
                             aria-label="FullName" 
                             placeholder="Full Name"
+                            onChange={(e) =>setFullName(e.target.value)}
                             required>                            
                         </input>
                     </div>
@@ -31,6 +76,7 @@ const Register = () => {
                             type="email" 
                             aria-label="Email" 
                             placeholder="Email Address"
+                            onChange={(e) =>setEmail(e.target.value)}
                             required
                             >
                         </input>
@@ -42,6 +88,7 @@ const Register = () => {
                             type="password" 
                             aria-label="Password" 
                             placeholder="Password"
+                            onChange={(e) =>setPassword(e.target.value)}
                             required>
                         </input>
                     </div>
@@ -52,6 +99,7 @@ const Register = () => {
                             type="password" 
                             aria-label="Password" 
                             placeholder="Confirm Password"
+                            onChange={(e) =>setConfirmPassword(e.target.value)}
                             required
                             >
                         </input>
@@ -59,7 +107,8 @@ const Register = () => {
                     <div className="mt-[61px] flex items-center justify-center">
                         <button 
                             className="flex-shrink-0 bg-[#3f85e3] hover:bg-teal-700 border-[#3f85e3] hover:border-teal-700 h-[35px] w-[131px] text-sm border-4 text-white py-1 px-2 rounded" 
-                            type="submit">
+                            type="submit"
+                            onClick={() => validate()}>
                                 Register
                         </button>
                     </div>
@@ -127,7 +176,9 @@ const Register = () => {
                     <div className="mt-[61px] flex items-center justify-center">
                         <button 
                         className="flex-shrink-0 bg-[#3f85e3] hover:bg-teal-700 border-[#3f85e3] hover:border-teal-700 h-[52px] w-[327px] text-[16px] font-medium border-4 text-white py-1 px-2 rounded rounded-xl" 
-                        type="submit">
+                        type="submit"
+                        // onClick={(e) => handleSubmit(e) }
+                        >
                             Register
                         </button>
                     </div>

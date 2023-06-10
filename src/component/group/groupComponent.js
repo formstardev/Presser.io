@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 const GroupComponent = (props) => {
   const history = useHistory();
   return (
-    <div className="bg-[#373c40] mt-3 sm:w-full sm:min-h-fit w-11/12 rounded-md py-2 border border-white border-opacity-10"
+    <div className="bg-[#373c40] mt-3 sm:w-full sm:min-h-fit w-11/12 rounded-md py-2 border border-white border-opacity-10 hover:md:cursor-pointer"
           onClick={() => history.push('/group/groupchat')}>
       <div className="flex">
         <div className="mx-2 my-2">
