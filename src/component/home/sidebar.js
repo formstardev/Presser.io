@@ -12,7 +12,7 @@ let navigation = [
   { name: 'Message', to: '/message', icon: FiMail, current: false },
   { name: 'Groups', to: '/group', icon:FaUsers, current: false },
   { name: 'Notifications', to: '#', icon: FiBell, current: false },
-  { name: 'Profile', to: '#', icon: FaUser, current: false },
+  { name: 'Profile', to: '/profile', icon: FaUser, current: false },
   { name: 'Settings', to: '#', icon: FiSettings, current: false },
 ]
 

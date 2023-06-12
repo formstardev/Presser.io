@@ -20,7 +20,7 @@ const Layout = ({children}) => {
                 <div className="w-full sm:w-auto mt-[20px] mx-2 sm:ml-[150px] ">                           
                     {children}
                 </div>
-                <div className="ml-[80px] mt-[35px] md:block hidden ">
+                <div className="ml-[80px] mr-3 mt-[35px] md:block hidden ">
                     <RightBar/>
                 </div>
             </div>

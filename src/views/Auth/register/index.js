@@ -42,14 +42,14 @@ const Register = () => {
         return Object.keys(errors).length === 0;
     };
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    //     if (validate()) {
-    //         // Submit the form
-    //         history.push("/home")
-    //     }
-    // } 
+        if (validate()) {
+            // Submit the form
+            history.push("/home")
+        }
+    } 
     return (
         <div className="sm:bg-[#edeff1] bg-[#f4f4f4] min-h-screen justify-center flex">
             <div className="sm:block hidden relative sm:flex sm:flex-col sm:mt-0 sm:justify-center sm:items-center">
@@ -171,13 +171,14 @@ const Register = () => {
                         aria-label="password" 
                         placeholder="Confirm Password"
                         required
-                        ></input>
+                        >
+                        </input>
                     </div>
                     <div className="mt-[61px] flex items-center justify-center">
                         <button 
                         className="flex-shrink-0 bg-[#3f85e3] hover:bg-teal-700 border-[#3f85e3] hover:border-teal-700 h-[52px] w-[327px] text-[16px] font-medium border-4 text-white py-1 px-2 rounded rounded-xl" 
                         type="submit"
-                        // onClick={(e) => handleSubmit(e) }
+                        onClick={(e) => handleSubmit(e) }
                         >
                             Register
                         </button>

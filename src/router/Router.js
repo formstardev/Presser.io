@@ -16,6 +16,7 @@ import Home from '../views/Home';
 import Message from '../views/Message';
 import Group from '../views/Group';
 import GroupChat from '../views/Group/groupChat';
+import Profile from '../views/Profile';
 
 
 
@@ -35,6 +36,7 @@ const Routes = () => {
         <Route path="/message" component = { Message } exact/>                
         <Route path="/group" component = { Group } exact/>                
         <Route path="/group/groupchat" component = { GroupChat } exact/>                
+        <Route path="/profile" component = { Profile } exact/>                
       </Switch>
     </BrowserRouter>
   );

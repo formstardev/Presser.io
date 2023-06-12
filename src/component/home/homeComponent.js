@@ -24,7 +24,7 @@ const HomeComponent = () => {
 
   return (
     <div className="sm:mb-8 mb-[80px]">
-      <nav className="mx-3 flex space-x-2 rounded-lg bg-[#373C40] sm:px-2 px-0 sm:py-2 py-0 border border-opacity-40 border-[#8D969D] border-bold sm:w-full w-11/12 border-1" aria-label="Tabs" role="tablist">
+      <nav className="mx-3 flex space-x-2 rounded-lg overflow-x-auto bg-[#373C40] sm:px-2 px-0 sm:py-2 py-0 border border-opacity-40 border-[#8D969D] border-bold sm:w-full w-11/12 border-1" aria-label="Tabs" role="tablist">
         {tabslist.map((tab,index)=>
         <button 
             key={index}
@@ -33,7 +33,7 @@ const HomeComponent = () => {
             activeTab === tab.data_hs_tab
               ? 'hs-tab-active:bg-[#3F85E3] hs-tab-active:text-white'
               : ''
-          } py-3 sm:w-[83px] w-1/6 h-[33px] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-gray-500 rounded-lg hover:text-blue-600 dark:hover:text-gray-400 active`}
+          } py-3 sm:w-[83px] w-1/6 min-w-[16.66%] h-[33px] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-gray-500 rounded-lg hover:text-blue-600 dark:hover:text-gray-400 active`}
           id={tab.id}
           data-hs-tab={tab.data_hs_tab}
           aria-controls={tab.aria_controls}
