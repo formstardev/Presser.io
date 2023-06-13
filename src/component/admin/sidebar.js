@@ -6,8 +6,10 @@ import {
 import { FiBell, FiMail, FiSettings } from 'react-icons/fi'
 import { FaUser, FaUsers } from 'react-icons/fa'
 import { Link, useHistory } from 'react-router-dom';
+import { RxDashboard } from 'react-icons/rx';
 
 let navigation = [
+  { name: 'Dashboard', to: '/dashboard', icon: RxDashboard, current: true },
   { name: 'Home', to: '/home', icon: HomeIcon, current: true },
   { name: 'Message', to: '/message', icon: FiMail, current: false },
   { name: 'Groups', to: '/group', icon:FaUsers, current: false },

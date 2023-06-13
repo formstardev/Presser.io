@@ -12,11 +12,13 @@ import Login from '../views/Auth/login'
 import Confirmation from '../views/Auth/confirmation'
 import Onboarding from '../views/onboarding';
 import RegisterBasic from '../views/Auth/register-basic';
-import Home from '../views/Home';
-import Message from '../views/Message';
-import Group from '../views/Group';
-import GroupChat from '../views/Group/groupChat';
 import Profile from '../views/Profile';
+import Layout from '../views/Layout';
+import HomeComponent from '../component/home/homeComponent';
+import MessageList from '../component/message/messageList';
+import GroupList from '../component/group/groupList';
+import GroupChatComponent from '../component/group/groupChatComponent';
+import SettingComponent from '../component/setting/settingContainer';
 
 
 
@@ -31,12 +33,16 @@ const Routes = () => {
         <Route path="/login" component = { Login } exact/>
         <Route path="/confirmation" component = { Confirmation } exact/>        
         <Route path="/onboarding" component = { Onboarding } exact/>
-        <Route path="/register-basic" component = { RegisterBasic } exact/>                
-        <Route path="/home" component = { Home } exact/>                
-        <Route path="/message" component = { Message } exact/>                
-        <Route path="/group" component = { Group } exact/>                
-        <Route path="/group/groupchat" component = { GroupChat } exact/>                
+        <Route path="/register-basic" component = { RegisterBasic } exact/>
         <Route path="/profile" component = { Profile } exact/>                
+
+        <Layout>                
+          <Route path="/home" component = { HomeComponent } exact/>                
+          <Route path="/message" component = { MessageList } exact/>                
+          <Route path="/group" component = { GroupList } exact/>                
+          <Route path="/group/groupchat" component = { GroupChatComponent } exact/>
+          <Route path="/setting" component = { SettingComponent }></Route>
+        </Layout>                
       </Switch>
     </BrowserRouter>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { BsFillSendFill } from "react-icons/bs";
 import { HiOutlinePhotograph } from "react-icons/hi";
@@ -7,6 +7,7 @@ import { IoIosArrowBack } from "react-icons/io"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const GroupChatComponent = () => {
+  
   const [messages, setMessages] = useState([
     {
       id: uuidv4(),
@@ -34,7 +35,9 @@ const GroupChatComponent = () => {
     },
     // ... more messages ...
   ]);
+  
   const [newMessage, setNewMessage] = useState("");
+  
 
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
@@ -50,8 +53,22 @@ const GroupChatComponent = () => {
     };
     setMessages([...messages, newMessageObj]);
     setNewMessage("");
+    // Scroll to the bottom of the scrollbar after a new message has been submitted
+    if (scrollRef.current) {
+      const { scrollHeight, clientHeight } = scrollRef.current;
+      scrollRef.current.scrollTop = scrollHeight - clientHeight;
+    }
   };
+  useEffect(() => {
+    // Scroll to the bottom of the scrollbar after the component has mounted
+    if (scrollRef.current) {
+      const { scrollHeight, clientHeight } = scrollRef.current;
+      scrollRef.current.scrollTop = scrollHeight - clientHeight;
+    }
+  }, [newMessage]);
   const history = useHistory();
+  const scrollRef = useRef(null);
+  
 
   return (
     <div className="sm:w-[517px] w-full max-w-4xl mx-auto my-8">
@@ -60,7 +77,9 @@ const GroupChatComponent = () => {
         <p className="mx-3">Back to All Groups</p>
       </div>
       <div className="flex flex-col justify-between h-screen">
-        <Scrollbar style={{ width: "100%", height: "calc(100vh - 280px)" }}>
+        <Scrollbar 
+          ref={scrollRef}
+          style={{ width: "100%", height: "calc(100vh - 280px)" }}>
           {messages.map((message) => (
             <div
               key={message.id}

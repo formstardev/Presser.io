@@ -3,6 +3,7 @@ import { FiMessageSquare, FiVideo } from "react-icons/fi";
 import { HiPhotograph } from "react-icons/hi";
 import SpeaksComponent from "./speaksComponent";
 import AddTabPopUp from "./addTabPopUp";
+import VideoComponent from "./videoComponent";
 const ProfileScrollbar = () => {
     const [activeTab, setActiveTab] = useState('#pills-with-brand-color-1');
     const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,7 @@ const ProfileScrollbar = () => {
             activeTab === tab.data_hs_tab
               ? 'hs-tab-active:bg-[#3F85E3] hs-tab-active:text-white'
               : ''
-          } py-2 sm:w-1/4 w-1/4 min-w-[25%] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-gray-500 rounded-lg hover:text-white dark:hover:text-gray-400 active`}
+          } md:py-2 py-1 md:w-1/4 w-1/6 md:min-w-[25%] min-w-[16.6%] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[10px] font-medium text-center text-gray-500 rounded-lg hover:text-white dark:hover:text-gray-400 active`}
           id={tab.id}
           data-hs-tab={tab.data_hs_tab}
           aria-controls={tab.aria_controls}
@@ -52,7 +53,7 @@ const ProfileScrollbar = () => {
           type="button"
           role="tab"
           onClick={() => setIsOpen(true)}
-          className="py-2 sm:w-1/4 w-1/4 min-w-[25%] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-[#8D969D] rounded-lg hover:text-white dark:hover:text-gray-400 active"
+          className="py-2 sm:w-1/4 w-1/6 md:min-w-[25%] min-w-[16.6%] flex justify-center inline-flex cursor-none sm:cursor-pointer items-center gap-2 bg-transparent sm:text-[14px] text-[12px] font-medium text-center text-[#8D969D] rounded-lg hover:text-white dark:hover:text-gray-400 active"
         >
           Add Tab
         </button>        
@@ -84,7 +85,7 @@ const ProfileScrollbar = () => {
         >
           
           <div className='mt-3 border-t flex flex-col justify-center border-white border-opacity-10'>
-            <SpeaksComponent/>
+            <VideoComponent/>
           </div>
         </div>
         <div
@@ -93,7 +94,8 @@ const ProfileScrollbar = () => {
           aria-labelledby="pills-with-brand-color-item-3"
           className={`${activeTab === '#pills-with-brand-color-3' ? ' fade-in duration-100 ease-in-out' : 'hidden'}`}
         >        
-          <div className='mt-3 border-t border-white border-opacity-10'>          
+          <div className='mt-3 border-t border-white border-opacity-10'>
+            <VideoComponent/>          
           </div>
         </div>
         <div
@@ -103,7 +105,7 @@ const ProfileScrollbar = () => {
           className={`${activeTab === '#pills-with-brand-color-4' ? ' fade-in duration-100 ease-in-out' : 'hidden'}`}
         >        
           <div className='mt-3 border-t border-white border-opacity-10'>          
-            <SpeaksComponent/>
+            <VideoComponent/>
           </div>
         </div>
       </div>
