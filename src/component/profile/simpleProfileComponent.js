@@ -42,7 +42,7 @@ const SimpleProfileComponent = () => {
                         </div>
                         <div className="flex relative my-3 justify-end items-center">
                             <button 
-                                className="mx-1 rounded-md md:px-5 md:py-2 px-3 py-1 bg-blue-500 text-white text-[14px] flex items-center justify-center"
+                                className="rounded-md md:px-5 md:py-2 px-3 py-1 bg-blue-500 text-white text-[14px] flex items-center justify-center"
                                 onClick={() =>history.push('/message')}
                             >
                                 <FiMail className="mx-2 text-white text-[16px]"/>

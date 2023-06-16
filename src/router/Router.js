@@ -19,14 +19,18 @@ import MessageList from '../component/message/messageList';
 import GroupList from '../component/group/groupList';
 import GroupChatComponent from '../component/group/groupChatComponent';
 import SettingComponent from '../component/setting/settingContainer';
+import  Dashboard  from '../component/admin';
+import DashboardLayout from '../component/admin/layout';
 
 
 
 const Routes = () => {
+  const isAdmin =false;
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" component={ Splash } exact />
+        <Route path="/dashboard" component={ Dashboard } exact />
         <Route path="/landing" component = { Landing } exact />
         <Route path="/register" component = { Register } exact />
         <Route path="/verification" component = { Veryfication } exact/>
@@ -34,15 +38,24 @@ const Routes = () => {
         <Route path="/confirmation" component = { Confirmation } exact/>        
         <Route path="/onboarding" component = { Onboarding } exact/>
         <Route path="/register-basic" component = { RegisterBasic } exact/>
-        <Route path="/profile" component = { Profile } exact/>                
-
+        <Route path="/profile" component = { Profile } exact/>
+       {isAdmin ?
+        <DashboardLayout>
+          <Route path="/dashboard/home" component = {HomeComponent} exact/>  
+          <Route path="/dashboard/message" component = { MessageList } exact/>  
+          <Route path="/dashboard/group" component = {GroupList} exact/>  
+          <Route path="/group/groupchat" component = {GroupChatComponent} exact/>  
+          <Route path="/dashboard/Setting" component = {SettingComponent} exact/>  
+        </DashboardLayout>                
+        :
         <Layout>                
           <Route path="/home" component = { HomeComponent } exact/>                
           <Route path="/message" component = { MessageList } exact/>                
           <Route path="/group" component = { GroupList } exact/>                
           <Route path="/group/groupchat" component = { GroupChatComponent } exact/>
           <Route path="/setting" component = { SettingComponent }></Route>
-        </Layout>                
+        </Layout> 
+        }                       
       </Switch>
     </BrowserRouter>
   );

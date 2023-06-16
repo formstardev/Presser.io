@@ -28,7 +28,7 @@ export default function Account() {
   };
   const [name,setName] = useState('@Alice10');
   const [phoneNumber, setPhoneNumber] = useState('+1 657-254-7496');
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('abandonraj@gmail.com');
   const [password, setPassword] = useState('123456')
 
 
@@ -61,26 +61,28 @@ export default function Account() {
               <div className="mx-3 mt-2 flex justify-between">
                 <div className="font-bold">
                   <p className="md:text-[12px] text-[#6C6C6C]">Username</p>
-                  <p className={`${infoShow} md:text-[15px] text-white`}>{userInfo.name}</p>
+                  <p className={`${selectedItem === 'name' ? infoShow : 'block'} md:text-[15px] text-white py-2`}>{userInfo.name}</p>
                   <input
-                    className={`${selectedItem === 'name' ? inputShow : 'hidden'} bg-gray-200 border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
+                    className={`${selectedItem === 'name' ? inputShow : 'hidden'} bg-gray-700 bg-opacity-20 font-light text-white border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
                     type="text"
                     ref={nameRef}
                     value={userInfo.name}
                     onChange={(e) => setName(e.target.value)}
+                    autoFocus
+                    required                    
                   >
                   </input>
                 </div>
                 <div className="md:text-[14px] text-[#6C6C6C] flex justify-center items-center">
-                  {infoShow === 'block'?
-                    <FiEdit2 
-                      className="hover:cursor-pointer"
-                      onClick={() => handleSubmitInfo('name')}
-                    />
-                    :
+                  {infoShow === 'hidden' && selectedItem === 'name' ?
                     <TiTick
-                      className="hover:cursor-pointer text-[20px]"
-                      onClick={handleSaveInfo}
+                    className="hover:cursor-pointer text-white text-[22px]"
+                    onClick={handleSaveInfo}
+                    />
+                    :                    
+                    <FiEdit2 
+                      className="hover:cursor-pointer text-white"
+                      onClick={() => handleSubmitInfo('name')}
                     />
                   }
                 </div>
@@ -88,9 +90,9 @@ export default function Account() {
               <div className="mx-3 mt-3 flex justify-between">
                 <div className="font-bold">
                   <p className="md:text-[12px] text-[#6C6C6C]">Phone</p>
-                  <p className={`${infoShow} md:text-[15px] text-white`}>{userInfo.phone_number}</p>
+                  <p className={`${selectedItem === 'phone_number' ? infoShow : 'block'} py-2 md:text-[15px] text-white`}>{userInfo.phone_number}</p>
                   <input
-                    className={`${selectedItem === 'phone_number' ? inputShow : 'hidden'} bg-gray-200 border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
+                    className={`${selectedItem === 'phone_number' ? inputShow : 'hidden'} bg-gray-700 bg-opacity-20 font-light text-white border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
                     type="text"
                     ref={nameRef}
                     value={userInfo.phone_number}
@@ -99,15 +101,16 @@ export default function Account() {
                   </input>
                 </div>
                 <div className="md:text-[14px] text-[#6C6C6C] flex justify-center items-center">
-                  {infoShow === 'block'?
-                    <FiEdit2 
-                      className="hover:cursor-pointer"
-                      onClick={() => handleSubmitInfo('phone_number')}
+                  {infoShow === 'hidden' && selectedItem === 'phone_number' ?
+                    <TiTick
+                    className="hover:cursor-pointer text-white text-[22px]"
+                    onClick={handleSaveInfo}
                     />
                     :
-                    <TiTick
-                      className="hover:cursor-pointer text-[20px]"
-                      onClick={handleSaveInfo}
+                    
+                    <FiEdit2 
+                      className="hover:cursor-pointer text-white"
+                      onClick={() => handleSubmitInfo('phone_number')}
                     />
                   }
                 </div>
@@ -115,9 +118,9 @@ export default function Account() {
               <div className="mx-3 mt-2 flex justify-between py-2">
                 <div className="font-bold">
                   <p className="md:text-[12px] text-[#6C6C6C]">Email</p>
-                  <p className={`${infoShow} md:text-[15px] text-white`}>{userInfo.email}</p>
+                  <p className={`${selectedItem === 'email' ? infoShow : 'block'} py-2 md:text-[15px] py-2 text-white`}>{userInfo.email}</p>
                   <input
-                    className={`${selectedItem === 'email' ? inputShow : 'hidden'} bg-gray-200 border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
+                    className={`${selectedItem === 'email' ? inputShow : 'hidden'} bg-gray-700 bg-opacity-20 font-light text-white border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
                     type="text"
                     ref={nameRef}
                     value={userInfo.email}
@@ -126,15 +129,15 @@ export default function Account() {
                   </input>
                 </div>
                 <div className="md:text-[14px] text-[#6C6C6C] flex justify-center items-center">
-                  {infoShow === 'block'?
-                    <FiEdit2 
-                      className="hover:cursor-pointer"
-                      onClick={() => handleSubmitInfo('email')}
-                    />
-                    :
+                  {infoShow === 'hidden' && selectedItem === 'email'?
                     <TiTick
-                      className="hover:cursor-pointer text-[20px]"
-                      onClick={handleSaveInfo}
+                    className="hover:cursor-pointer text-white text-[22px]"
+                    onClick={handleSaveInfo}
+                    />
+                    :                    
+                    <FiEdit2 
+                      className="hover:cursor-pointer text-white"
+                      onClick={() => handleSubmitInfo('email')}
                     />
                   }
                 </div>
@@ -142,9 +145,9 @@ export default function Account() {
               <div className="mx-3 mt-2 mb-4 flex justify-between py-2">
                 <div className="font-bold">
                   <p className="md:text-[12px] text-[#6C6C6C]">Password</p>
-                  <p className={`${infoShow} md:text-[15px] text-white`}>*********</p>
+                  <p className={`${selectedItem === 'password'? infoShow : 'block'} py-2 md:text-[15px] text-white`}>*********</p>
                   <input
-                    className={`${selectedItem === 'password' ? inputShow : 'hidden'} bg-gray-200 border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
+                    className={`${selectedItem === 'password' ? inputShow : 'hidden'} bg-gray-700 bg-opacity-20 font-light text-white border border-white border-opacity-10 rounded-md mt-2 focus:outline-none`}
                     type="password"
                     ref={nameRef}
                     value={userInfo.password}
@@ -153,15 +156,15 @@ export default function Account() {
                   </input>
                 </div>
                 <div className="md:text-[14px] text-[#6C6C6C] flex justify-center items-center">
-                  {infoShow === 'block'?
-                    <FiEdit2 
-                      className="hover:cursor-pointer"
-                      onClick={() => handleSubmitInfo('password')}
-                    />
-                    :
+                  {infoShow === 'hidden' && selectedItem === 'password'?
                     <TiTick
-                      className="hover:cursor-pointer text-[20px]"
-                      onClick={handleSaveInfo}
+                    className="hover:cursor-pointer text-white text-[22px]"
+                    onClick={handleSaveInfo}
+                    />
+                    :                    
+                    <FiEdit2 
+                      className="hover:cursor-pointer text-white"
+                      onClick={() => handleSubmitInfo('password')}
                     />
                   }
                 </div>                

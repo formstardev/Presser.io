@@ -10,12 +10,12 @@ import { RxDashboard } from 'react-icons/rx';
 
 let navigation = [
   { name: 'Dashboard', to: '/dashboard', icon: RxDashboard, current: true },
-  { name: 'Home', to: '/home', icon: HomeIcon, current: true },
-  { name: 'Message', to: '/message', icon: FiMail, current: false },
-  { name: 'Groups', to: '/group', icon:FaUsers, current: false },
+  { name: 'Home', to: '/dashboard/home', icon: HomeIcon, current: false },
+  { name: 'Message', to: '/dashboard/message', icon: FiMail, current: false },
+  { name: 'Groups', to: '/dashboard/group', icon:FaUsers, current: false },
   { name: 'Notifications', to: '#', icon: FiBell, current: false },
-  { name: 'Profile', to: '/profile', icon: FaUser, current: false },
-  { name: 'Settings', to: '/setting', icon: FiSettings, current: false },
+  { name: 'Profile', to: '/dashboard/profile', icon: FaUser, current: false },
+  { name: 'Settings', to: '/dashboard/setting', icon: FiSettings, current: false },
 ]
 
 function classNames(...classes) {

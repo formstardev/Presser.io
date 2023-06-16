@@ -45,24 +45,26 @@ export default function HashtagGroup (props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const isDarkMode = localStorage.getItem('isDarkMode') === "true" ? true : false;
+
 
   
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value}  onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Newest" {...a11yProps(0)} sx={{ width:'50%', color: value === 0 ? 'white' : 'white', '&:hover': { color: value === 0 ? 'white' : 'white'}, '&:active': { color: value === 0 ? 'white' : 'white'}}}/>
-          <Tab label="Best" {...a11yProps(0)} sx={{ width:'50%', color: value === 0 ? 'white' : 'white', '&:hover': { color: value === 0 ? 'white' : 'white'}, '&:active': { color: value === 0 ? 'white' : 'white'}}}/>
+          <Tab label="Newest" {...a11yProps(0)} sx={{ width:'50%', color: value === 0 ? 'gray' : 'gray', '&:hover': { color: value === 0 ? 'gray' : 'gray'}, '&:active': { color: value === 0 ? 'gray' : 'gray'}}}/>
+          <Tab label="Best" {...a11yProps(0)} sx={{ width:'50%', color: value === 0 ? 'gray' : 'gray', '&:hover': { color: value === 0 ? 'gray' : 'gray'}, '&:active': { color: value === 0 ? 'gray' : 'gray'}}}/>
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         {props.bdata.filter(items => items.category && items.category.includes('new')).map((data, index) =>
-            <button key={index} className='mx-3 mt-3 bg-[#212529]  border border-white border-opacity-10 rounded-full text-white px-2 py-1 hover:bg-opacity-50 active:cursor-none' type='button'>{data.name}</button>
+            <button key={index} className={`mx-3 mt-3 ${isDarkMode ? 'bg-[#212529]' : 'bg-gray-500'} border border-white border-opacity-10 rounded-full text-white px-2 py-1 hover:bg-opacity-50 active:cursor-none`} type='button'>{data.name}</button>
         )}
       </TabPanel>
       <TabPanel value={value} index={1}>
         {props.bdata.filter(items => items.category && items.category.includes('best')).map((data, index) =>
-            <button key={index} className='mx-3 mt-3 bg-[#212529]  border border-white border-opacity-10 rounded-full text-white px-2 py-1 hover:bg-opacity-50' type='button'>{data.name}</button>
+            <button key={index} className={`mx-3 mt-3 ${isDarkMode ? 'bg-[#212529]' : 'bg-gray-500'} border border-white border-opacity-10 rounded-full text-white px-2 py-1 hover:bg-opacity-50 active:cursor-none`} type='button'>{data.name}</button>
         )}
       </TabPanel>      
     </Box>
