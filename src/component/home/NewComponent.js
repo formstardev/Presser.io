@@ -19,7 +19,7 @@ const NewComponent = (props) => {
                             <p className={`${isDarkMode ? 'text-[#edeff1]' : 'text-black'} sm:text-[14px] text-[10px] font-[medium]`}>{props.ndata.title}</p>
                         </div>
                         <div className="flex float-left items-center">
-                            <p className="text-gray-500 sm:text-[12px] text-[8px] text-opacity-60 font-normal">{props.ndata.time}</p>
+                            <p className="text-gray-700 sm:text-[12px] text-[8px] text-opacity-60 font-normal">{props.ndata.time}</p>
                         </div>
                         <div className="flex float-left items-center">
                             <p className={`sm:text-[14px] text-[9px] font-normal ${isDarkMode ? 'text-[#edeff1]' : 'text-black'} py-1`}>{props.ndata.content}</p>

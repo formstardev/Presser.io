@@ -7,7 +7,7 @@ const Onboarding = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const history = useHistory('');
     const slides = [
-        {src: '/images/welcome.png',alt:'',title:'Welcome', content:'Labore deserunt aliqua qui incididunt. Enim nisi pariatur irure labat consequat labore minim fugiat dese'},
+        {src: '/images/welcome.jpg',alt:'',title:'Welcome', content:'Labore deserunt aliqua qui incididunt. Enim nisi pariatur irure labat consequat labore minim fugiat dese'},
         {src: '/images/connect.png',alt:'',title:'Connect', content:'Labore deserunt aliqua qui incididunt. Enim nisi pariatur irure labat consequat labore minim fugiat dese'},
         {src: '/images/speaker.png',alt:'',title:'Speak', content:'Labore deserunt aliqua qui incididunt. Enim nisi pariatur irure labat consequat labore minim fugiat dese'}
     ];

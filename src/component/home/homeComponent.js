@@ -68,7 +68,7 @@ const HomeComponent = () => {
           <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-[34px] font-medium`}>
             Breaking News
           </p>
-          <div className='mt-3 border-t border-white border-opacity-10 '>          
+          <div className={`mt-3 border-t ${isDarkMode ? 'border-white' : 'border-gray-800'} border-opacity-20 justiy-center items-center flex flex-col`}>          
             <NewList/>
           </div>
         </div>
@@ -88,7 +88,7 @@ const HomeComponent = () => {
           <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-[34px] font-medium`}>
             Speaking
           </p>
-          <div className='mt-3 border-t flex flex-col justify-center border-white border-opacity-10'>
+          <div className={`mt-3 border-t ${isDarkMode ? 'border-white' : 'border-gray-800'} border-opacity-20 justiy-center items-center flex flex-col`}>
             <ProfileContent className="mt-2"/>
           </div>
         </div>
@@ -107,7 +107,7 @@ const HomeComponent = () => {
           <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-[34px] font-medium`}>
             Top News Stories
           </p>
-          <div className='mt-3 border-t border-white border-opacity-10'>          
+          <div className={`mt-3 border-t ${isDarkMode ? 'border-white' : 'border-gray-800'} border-opacity-20 justiy-center items-center flex flex-col`}>          
             <NewList/>
           </div>
         </div>
@@ -126,7 +126,7 @@ const HomeComponent = () => {
           <p className={`${isDarkMode ? 'text-white' : 'text-black'} text-[34px] font-medium`}>
             Trending
           </p>
-          <div className='mt-3 border-t border-white border-opacity-10'>          
+          <div className={`mt-3 border-t ${isDarkMode ? 'border-white' : 'border-gray-800'} border-opacity-20 justiy-center items-center flex flex-col`}>          
             <TrendingList/>
           </div>
         </div>

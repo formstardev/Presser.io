@@ -56,7 +56,7 @@ export default function Account() {
           </div>
         </div>
         <Collapse open={open}>
-          <Card className="my-4 w-full bg-[#373c40] mx-auto">
+          <Card className="w-full bg-[#373c40] mx-auto">
             <CardBody>
               <div className="mx-3 mt-2 flex justify-between">
                 <div className="font-bold">

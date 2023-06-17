@@ -22,12 +22,12 @@ const TrendingList = () => {
     ]
     return (
         <div className="sm:mb-8 mb-[80px]">  
-            <div className="sm:hidden block border-b py-2 border-white border-opacity-10">
+            <div className="sm:hidden block border-b py-2 border-gray-800 border-opacity-20">
                 <p className="text-[24px] font-medium text-blue-400">
                     Popular Hashtags
                 </p>
             </div>
-            <div className="sm:hidden block border-b border-white border-opacity-20 py-3">
+            <div className="sm:hidden block border-b border-gray-800 border-opacity-20 py-3">
                 <HashtagGroup bdata={hashtagslist}/>
             </div>           
             {trendinglist.map((tdata,index) => 

@@ -29,10 +29,12 @@ import { Menu, Transition } from '@headlessui/react';
                                     </figure>
                                 </div>
                                 <div>
-                                    <p className='text-[#3F85E3] sm:text-[14px] text-[12px] my-2'>{data.nickname}
-                                        
+                                    <p className='text-[#3F85E3] sm:text-[14px] text-[12px] my-2'>
+                                        {data.nickname}                                     
                                     </p>
-                                    <p className='sm:text-[12px] text-[10px] text-[#C6C6C6] '>{data.uploadtime}</p>
+                                    <p className='sm:text-[12px] text-[10px] text-[#C6C6C6] '>
+                                        {data.uploadtime}
+                                    </p>
                                 </div>
                                 <div className='mt-2 mr-1 ml-2'>
                                     <img src="/images/p-circle.png" alt='' className=' h-[26.8px]'></img>
@@ -40,7 +42,7 @@ import { Menu, Transition } from '@headlessui/react';
                             </div>
                         </div>
                         <div className="ml-4 md:ml-6  my-[10px]">
-                    {/* Profile dropdown */}
+                            {/* Profile dropdown */}
                             <Menu as="div" className="float-right">
                                 {({ open }) => (
                                 <>
@@ -130,19 +132,19 @@ import { Menu, Transition } from '@headlessui/react';
                         <div className='sm:mt-5 mt-2 flex justify-between mx-3 gap-2'>
                             <div className='ml-2 flex justify-between hover:cursor-pointer'>
                                 <AiTwotoneHeart className='sm:w-6 sm:h-6 w-4 h-4 text-[#3F85E3]'/>
-                                <p className='sm:text-[14px] text-[12px] text-white'>10 Likes</p>
+                                <p className={`sm:text-[14px] text-[12px] ${isDarkMode ? 'text-white' : 'text-gray-500' }`}>10 Likes</p>
                             </div>
                             <div className='flex justify-between hover:cursor-pointer'>
-                                <FiMessageSquare className='sm:w-6 sm:h-6 w-4 h-4 text-white'/>
-                                <p className='sm:text-[14px] text-[12px] text-white'>5 comments</p>
+                                <FiMessageSquare className={`sm:w-6 sm:h-6 w-4 h-4 ${isDarkMode ? 'text-white' : 'text-gray-500'}`}/>
+                                <p className={`sm:text-[14px] text-[12px] ${isDarkMode ? 'text-white' : 'text-gray-500' }`}>5 comments</p>
                             </div>                
                             <div className='flex justify-between hover:cursor-pointer'>
-                                <IoMdRepeat className='sm:w-6 sm:h-6 w-4 h-4 text-white'/>
-                                <p className='sm:text-[14px] text-[12px] text-white'>Re-post</p>
+                                <IoMdRepeat className={`sm:w-6 sm:h-6 w-4 h-4 ${isDarkMode ? 'text-white' : 'text-gray-500'}`}/>
+                                <p className={`sm:text-[14px] text-[12px] ${isDarkMode ? 'text-white' : 'text-gray-500' }`}>Re-post</p>
                             </div>                
                             <div className='flex justify-between mr-2 hover:cursor-pointer'>
-                                <RiShareBoxLine className='sm:w-6 sm:h-6 w-4 h-4 text-white'/>
-                                <p className='sm:text-[14px] text-[12px] text-white'>Share</p>
+                                <RiShareBoxLine className={`sm:w-6 sm:h-6 w-4 h-4 ${isDarkMode ? 'text-white' : 'text-gray-500'}`}/>
+                                <p className={`sm:text-[14px] text-[12px] ${isDarkMode ? 'text-white' : 'text-gray-500' }`}>Share</p>
                             </div>                
                         </div>
                     </div>
