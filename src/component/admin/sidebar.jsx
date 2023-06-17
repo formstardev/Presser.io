@@ -22,12 +22,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Sidebar() {
+export default function Sidebar({isDarkMode}) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const history = useHistory();
 
   return (
-    <div className="h-screen flex overflow-hidden bg-[#212529]">
+    <div className={`h-screen flex overflow-hidden ${isDarkMode ? 'bg-[#212529]':'bg-[#edeff1]'}`}>
       <Transition.Root show={sidebarOpen} as={Fragment}>
         <Dialog
           as="div"
@@ -45,14 +45,14 @@ export default function Sidebar() {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-col h-0 flex-1">
             <div className="flex-1 flex flex-col overflow-y-auto">
-              <nav className="flex-col mt-[37px] mx-[41px] bg-[#212529] space-y-4">
+              <nav className={`flex-col mt-[37px] mx-[41px] ${isDarkMode ? 'bg-[#212529]':'bg-[#edeff1]'}  space-y-4`}>
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     to={item.to}
                     className={classNames(
-                      item.current ? 'bg-[#3F85E3] bg-opacity-20 text-[#3F85E3]' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'group flex bg-[#373C40] items-center sm:w-[210px] px-2 py-2 text-[19px] font-bold rounded-md'
+                      item.current ? 'bg-[#3F85E3] bg-opacity-50 text-[#3F85E3]' : `text-${isDarkMode ? 'gray-300' : 'gray-600'} hover:${isDarkMode ? 'bg-gray-700' : 'bg-blue-300'} hover:${isDarkMode ? 'text-white' : 'text-gray-500'}`,
+                      `group flex ${isDarkMode ? 'bg-[#373C40]' :'bg-[#3F85E3]'} bg-opacity-30 items-center sm:w-[210px] px-2 py-2 text-[19px] font-bold rounded-md`
                     )}
                     onClick={() => {
                       const updatedNavigation = navigation.map((navItem) => {
@@ -68,7 +68,7 @@ export default function Sidebar() {
                   >
                     <item.icon
                       className={classNames(
-                        item.current ? 'text-[#3F85E3]' : 'text-white group-hover:text-gray-300',
+                        item.current ? `text-[#3F85E3]` : `text-${isDarkMode ? 'white' : '[#373C40]'} group-hover:text-gray-500`,
                         'mr-3 h-6 w-6'
                       )}
                       aria-hidden="true"
