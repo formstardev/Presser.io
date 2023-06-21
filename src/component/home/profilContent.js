@@ -112,8 +112,8 @@ import { Menu, Transition } from '@headlessui/react';
                                     </Transition>
                                 </>
                                 )}
-                                </Menu>                    
-                            </div>
+                             </Menu>                    
+                           </div>
                         </div>
                         <div className='sm:w-[517.8px]'>
                             <p className={`sm:text-[14px] text-[9px] mx-5 my-2 font-normal ${isDarkMode ? 'text-[#edeff1]' : 'text-black'} `}>

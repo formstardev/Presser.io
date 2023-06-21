@@ -21,6 +21,7 @@ import GroupChatComponent from '../component/group/groupChatComponent';
 import SettingComponent from '../component/setting/settingContainer';
 import  Dashboard  from '../component/admin';
 import DashboardLayout from '../component/admin/layout';
+import NotificationList from '../component/notifacation/notificationList';
 
 
 
@@ -45,7 +46,9 @@ const Routes = () => {
           <Route path="/dashboard/message" component = { MessageList } exact/>  
           <Route path="/dashboard/group" component = {GroupList} exact/>  
           <Route path="/group/groupchat" component = {GroupChatComponent} exact/>  
-          <Route path="/dashboard/Setting" component = {SettingComponent} exact/>  
+          <Route path="/dashboard/Setting" component = {SettingComponent} exact/>
+          <Route path="/dashboard/notification" component = { NotificationList } exact/>
+
         </DashboardLayout>                
         :
         <Layout>                
@@ -53,6 +56,7 @@ const Routes = () => {
           <Route path="/message" component = { MessageList } exact/>                
           <Route path="/group" component = { GroupList } exact/>                
           <Route path="/group/groupchat" component = { GroupChatComponent } exact/>
+          <Route path="/notification" component = { NotificationList } exact/>
           <Route path="/setting" component = { SettingComponent }></Route>
         </Layout> 
         }                       

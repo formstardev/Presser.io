@@ -13,7 +13,7 @@ let navigation = [
   { name: 'Home', to: '/dashboard/home', icon: HomeIcon, current: false },
   { name: 'Message', to: '/dashboard/message', icon: FiMail, current: false },
   { name: 'Groups', to: '/dashboard/group', icon:FaUsers, current: false },
-  { name: 'Notifications', to: '#', icon: FiBell, current: false },
+  { name: 'Notifications', to: '/dashboard/notification', icon: FiBell, current: false },
   { name: 'Profile', to: '/dashboard/profile', icon: FaUser, current: false },
   { name: 'Settings', to: '/dashboard/setting', icon: FiSettings, current: false },
 ]

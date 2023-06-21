@@ -54,6 +54,7 @@ export default function GroupList () {
   };
   /** Open create group modal */
   const [isOpen, setIsOpen] = useState(false);
+  const isDarkMode = localStorage.getItem('isDarkMode') === "true" ? true : false;
   
 
   const grouplist = [
@@ -68,9 +69,9 @@ export default function GroupList () {
     <Box sx={{ width: isMobile? 'auto' : '517px' }}>
       <Box sx={{ borderBottom: 1, width: '100%', borderColor: 'divider', display:'flex', alignItems:'center', }}>
         <Tabs value={value} sx={{width:isMobile? '100%':'100%'}} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Pinned Groups" {...a11yProps(0)} sx={{ width:'33.333%', fontSize:isMobile ? '15px':'13px', color: value === 0 ? 'blue' : 'white', '&:hover': { color: value === 0 ? 'white' : 'white'}, '&:active': { color: value === 0 ? '' : 'white'}}}/>
-          <Tab label="Your Groups" {...a11yProps(1)} sx={{ width:'33.333%', fontSize:isMobile ? '15px':'13px', color: value === 1 ? 'blue' : 'white', '&:hover': { color: value === 1 ? 'white' : 'white'}, '&:active': { color: value === 1 ? '' : 'white'} }}/>
-          <Tab label="Other Groups" {...a11yProps(2)} sx={{ width:'33.333%', fontSize:isMobile ? '15px':'13px', color: value === 2 ? 'blue' : 'white', '&:hover': { color: value === 2 ? 'white' : 'white'}, '&:active': { color: value === 2 ? '' : 'white'} }}/>
+          <Tab label="Pinned Groups" {...a11yProps(0)} sx={{ width:'33.333%', fontSize:isMobile ? '15px':'13px', color: value === 0 && !isDarkMode ? 'blue' : 'black', '&:hover': { color: value === 0 ? 'gray' : 'white'}, '&:active': { color: value === 0 ? '' : 'white'}}}/>
+          <Tab label="Your Groups" {...a11yProps(1)} sx={{ width:'33.333%', fontSize:isMobile ? '15px':'13px', color: value === 1 && !isDarkMode ? 'blue' : 'black', '&:hover': { color: value === 1 ? 'gray' : 'white'}, '&:active': { color: value === 1 ? '' : 'white'} }}/>
+          <Tab label="Other Groups" {...a11yProps(2)} sx={{ width:'33.333%', fontSize:isMobile ? '15px':'13px', color: value === 2 && !isDarkMode ? 'blue' : 'black', '&:hover': { color: value === 2 ? 'gray' : 'white'}, '&:active': { color: value === 2 ? '' : 'white'} }}/>
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -96,7 +97,7 @@ export default function GroupList () {
       <TabPanel value={value} index={2}>
         <div className='flex justify-between min-h-fit p-2 mt-2 '> 
           <div className='mx-1 my-2 flex justify-center'>
-            <p className='text-white sm:text-[18px] font-bold'>Create a New Group</p>
+            <p className={`${isDarkMode ? 'text-white' : 'text-black'} sm:text-[18px] font-bold`}>Create a New Group</p>
           </div>
           <div>
           <button 
