@@ -3,9 +3,11 @@ import './App.css';
 import Router from './router/Router'
 
 
-const App =() => {
+const App = () => {
    return (
-     <Router />
+      <>
+        <Router />
+     </>
    )
 }
 export default App;

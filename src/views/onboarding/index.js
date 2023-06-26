@@ -33,6 +33,7 @@ const Onboarding = () => {
                 {slides.map((slide, index) => (
                     <div key={index} className={index === currentSlide ? 'w-[200px] sm:w-[442px]' : 'hidden'} id='onboarding-skip'>
                         <figure>
+                            
                             <img className='' src={slide.src} alt={slide.alt}></img>
                         </figure>
                         <p className='mt-[50px] sm:mt-[32px] text-[#000] text-[48px] font-medium text-left'>
@@ -62,8 +63,8 @@ const Onboarding = () => {
                             <FiArrowRight className='w-[24px]'/>
                         </button>  
                     </div>
-                    </div>
-                </div>          
+                </div>
+            </div>             
         </div>
     )
 };

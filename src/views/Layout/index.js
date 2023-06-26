@@ -4,6 +4,7 @@ import Sidebar from "../../component/home/sidebar";
 import RightBar from "../../component/home/rightBar";
 import Footer from "../../component/home/footer";
 import { useState } from "react";
+import SettingOffcanvas from "../setting/SettingOffCanvas";
 
 
 
@@ -46,6 +47,12 @@ const Layout = (props) => {
             <div className="sm:hidden block fixed bottom-0 w-full">
                 <Footer
                     isDarkMode={isDarkMode}
+                />
+            </div>
+            <div className="fixed right-0 top-[50%] flex justify-center items-center">
+                <SettingOffcanvas
+                    isDarkMode={isDarkMode}
+                    setIsDarkMode={setIsDarkMode}
                 />
             </div>
         </>
