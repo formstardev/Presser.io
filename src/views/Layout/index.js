@@ -23,7 +23,7 @@ const Layout = (props) => {
     })
     return (
         <>
-            <div className="mt-0">
+            <div className="mt-0 sticky top-0">
                 <Header 
                     isDarkMode={isDarkMode}
                     toggleDarkMode={toggleDarkMode}                 
