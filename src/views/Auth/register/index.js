@@ -1,59 +1,74 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Usericon from "../../../assets/img/Icon/user.png";
 import Emailicon from "../../../assets/img/Icon/email.png";
 import Passwordicon from "../../../assets/img/Icon/password.png";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import JwtService from '../../../@core/auth/jwt/jwtService';
+import { useForm, Controller } from 'react-hook-form';
+import useAuth from "../../../utility/hooks/useAuth";
+import AuthService from "../../../services/auth.service"
+
+
 
 
 const Register = () => {
+
+    const form = useRef();
+    const checkBtn = useRef();
     const [fullname, setFullName] = useState("");
     const [email, setEmail ] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState({});
     const history = useHistory();
-    const validate = () =>{
+    
+    const [successful, setSuccessful] = useState(false);
+    const [message, setMessage] = useState("");
 
-        if (!fullname.trim()) {
-            errors.fullName = "Full name is required";
-        }
-
-        if (!email.trim()) {
-            errors.email = "Email is required";
-        } else if (!/\S+@\S+\.\S+/.test(email)) {
-            errors.email = "Email is invalid";
-        }
-
-        if (!password) {
-            errors.password = "Password is required";
-        } else if (password.length < 6) {
-            errors.password = "Password should be at least 6 characters long";
-        }
-
-        if (!confirmPassword) {
-            errors.confirmPassword = "Confirm password is required";
-        } else if (password !== confirmPassword) {
-            errors.confirmPassword = "Passwords do not match";
-        }
-
-        setErrors(errors);
-
-        return Object.keys(errors).length === 0;
+    const validatePassword = () => {
+       if (!password === confirmPassword) {
+        return (
+            <div className="text-lg text-red-500 font-medium" role="toast">
+                Confirm password is wrong!
+            </div>
+        );
+       }
     };
 
-    const handleSubmit = (e) => {
+    const onSubmit = (e) => {
         e.preventDefault();
-
-        if (validate()) {
-            // Submit the form
-            history.push("/home")
-        }
-    } 
+    
+        setMessage("");
+        setSuccessful(false);
+    
+        // form.current.validateAll();
+    
+        
+          AuthService.register(fullname, email, password).then(
+            (response) => {
+              setMessage(response.data.message);
+              setSuccessful(true);
+            },
+            (error) => {
+              const resMessage =
+                (error.response &&
+                  error.response.data &&
+                  error.response.data.message) ||
+                error.message ||
+                error.toString();
+    
+              setMessage(resMessage);
+              setSuccessful(false);
+            }
+          );
+        
+      };
+    
     return (
         <div className="sm:bg-[#edeff1] bg-[#f4f4f4] min-h-screen justify-center flex">
             <div className="sm:block hidden relative sm:flex sm:flex-col sm:mt-0 sm:justify-center sm:items-center">
-                <form className="w-[330px] mt-[30px]" action="/verification">
+                <form className="w-[330px] mt-[30px]" ref={form} >
                     <figure className="sm:block" >
                         <img className="" src="/images/presser_final-logo.png" alt=""></img>
                     </figure> 
@@ -101,6 +116,7 @@ const Register = () => {
                             placeholder="Confirm Password"
                             onChange={(e) =>setConfirmPassword(e.target.value)}
                             required
+                            validations={validatePassword}
                             >
                         </input>
                     </div>
@@ -108,7 +124,8 @@ const Register = () => {
                         <button 
                             className="flex-shrink-0 bg-[#3f85e3] hover:bg-teal-700 border-[#3f85e3] hover:border-teal-700 h-[35px] w-[131px] text-sm border-4 text-white py-1 px-2 rounded" 
                             type="submit"
-                            onClick={() => validate()}>
+                            ref={checkBtn}
+                            onClick={(e) => onSubmit(e)}>
                                 Register
                         </button>
                     </div>
@@ -178,7 +195,7 @@ const Register = () => {
                         <button 
                         className="flex-shrink-0 bg-[#3f85e3] hover:bg-teal-700 border-[#3f85e3] hover:border-teal-700 h-[52px] w-[327px] text-[16px] font-medium border-4 text-white py-1 px-2 rounded rounded-xl" 
                         type="submit"
-                        onClick={(e) => handleSubmit(e) }
+                        onClick={(e) => onSubmit(e) }
                         >
                             Register
                         </button>
