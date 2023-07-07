@@ -64,7 +64,7 @@ const RightBar = () => {
                 <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-500' } border-opacity-20 px-4 py-3`}>
                     <div className="flex px-2 py-3 justify-between items-center mx-2 ">
                         <p className="text-[#3f85e3] text-[19px] font-bold">
-                            Popular Hashtags
+                            POPULAR TOPICS
                         </p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ const RightBar = () => {
             </div>
             <div className={`mt-[35px] sm:w-[328px] rounded-lg md:md-[328px] border border-white border-opacity-10 ${isDarkMode ? 'bg-[#373c40]' : 'bg-white' }  min-h-fit py-2`}>
                 <div className={`border-b ${isDarkMode ? 'border-white' : 'border-gray-500' } border-opacity-20 px-4 py-3`}>
-                    <p className="text-[#3f85e3] text-[19px] font-bold">Trending Hashtags</p>
+                    <p className="text-[#3f85e3] text-[19px] font-bold">TRENDING HASHTAGS</p>
                 </div>
                 <div className="">
                     <HashtagGroup bdata={hashtagslist}/>
